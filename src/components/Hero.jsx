@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
-import { profile, resumeUrl, availability, heroHeadline, heroSubtext, currentFocus } from '../data/portfolioData';
+import { profile,  availability, heroHeadline, heroSubtext, currentFocus } from '../data/portfolioData';
 
 export default function Hero() {
   return (
