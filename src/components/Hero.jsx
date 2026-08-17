@@ -13,9 +13,7 @@ export default function Hero() {
           <a className="button primary" href="#projects">
             View projects <Icon name="arrow" />
           </a>
-          <a className="button secondary" href={resumeUrl} target="_blank" rel="noreferrer" download>
-            Download resume <Icon name="download" />
-          </a>
+         
         </div>
       </div>
       <div className="hero-card" aria-label="Developer profile summary">

@@ -5,11 +5,10 @@ import freelanceImage from '../../images/freelancehome.png';
 
 export const whatsappUrl = 'https://wa.me/916301612731?text=Hi%20Aakash%20Reddy!%20Saw%20your%20portfolio.%20Need%20web%20dev.';
 
-// TODO: replace with your real resume file path (e.g. put resume.pdf in /public and use '/resume.pdf')
-export const resumeUrl = '/resume.pdf';
 
-// TODO: replace with your real GitHub profile URL
-export const githubUrl = 'https://github.com/your-username';
+
+
+export const githubUrl = 'https://github.com/aakashreddy-ui';
 
 export const linkedinUrl = 'https://www.linkedin.com/in/aakash-reddy-b048a1223/';
 
@@ -17,7 +16,7 @@ export const navItems = ['About', 'Skills', 'Projects', 'Blog', 'Experience', 'C
 
 export const profile = profileImage;
 
-// Hero copy — kept as data so it's easy to update without touching the component
+
 export const availability = 'Open to full-time & remote full-stack roles';
 export const heroHeadline = 'Full-stack developer for practical web apps.';
 export const heroSubtext =
@@ -52,7 +51,7 @@ export const projects = [
       'https://plus.unsplash.com/premium_photo-1771376761549-817c1e38a8fa?q=80&w=2091&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     stack: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'PHP', 'MySQL', 'XAMPP'],
     link: 'https://e-job-portal.netlify.app/',
-    // TODO: add your GitHub repo URL for this project
+    // GitHub URL 
     codeLink: '',
   },
   {
@@ -95,7 +94,7 @@ export const timeline = [
   },
   {
     title: 'Junior Web Developer Internship',
-    period: 'Final year internship',
+    period: '2025',
     body: 'Built websites with HTML, CSS, JavaScript, PHP, WordPress, and Wix while collaborating with design teams.',
   },
   {
@@ -124,8 +123,8 @@ export const blogPosts = [
     ],
     tags: ['Angular', 'React', 'Migration'],
     gallery: [
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80',
+      //'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80',
+      //'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80',
     ],
   },
   {
@@ -144,8 +143,8 @@ export const blogPosts = [
     ],
     tags: ['Node.js', 'Express', 'MongoDB'],
     gallery: [
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=900&q=80',
+     // 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=900&q=80',
     ],
   },
   {
@@ -164,8 +163,8 @@ export const blogPosts = [
     ],
     tags: ['Internship', 'Career', 'Lessons Learned'],
     gallery: [
-      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
+    // 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
+     // 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
     ],
   },
   {
@@ -184,8 +183,8 @@ export const blogPosts = [
     ],
     tags: ['Git', 'GitHub', 'Collaboration'],
     gallery: [
-      'https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=900&q=80',
+    //  'https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80',
+    //  'https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=900&q=80',
     ],
   },
   {
@@ -204,8 +203,8 @@ export const blogPosts = [
     ],
     tags: ['Planning', 'Full-Stack', 'Process'],
     gallery: [
-      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
+    //  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
+    //  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
     ],
   },
   {
@@ -224,8 +223,8 @@ export const blogPosts = [
     ],
     tags: ['MongoDB', 'Debugging', 'Backend'],
     gallery: [
-      'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-152637995098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=900&q=80',
+      // 'https://images.unsplash.com/photo-152637995098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
     ],
   },
 ];

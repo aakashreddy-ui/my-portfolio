@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Icon from './Icon';
-import { navItems, whatsappUrl, resumeUrl } from '../data/portfolioData';
+
+
+
+import { navItems, whatsappUrl } from '../data/portfolioData';
+
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,10 +30,7 @@ export default function Header() {
           WhatsApp
         </a>
 
-        <a className="button primary header-resume" href={resumeUrl} target="_blank" rel="noreferrer" download>
-          <Icon name="download" />
-          Resume
-        </a>
+       
 
         <button
           type="button"
@@ -50,17 +51,7 @@ export default function Header() {
             {item}
           </a>
         ))}
-        <a
-          className="button primary mobile-resume"
-          href={resumeUrl}
-          target="_blank"
-          rel="noreferrer"
-          download
-          onClick={() => setMenuOpen(false)}
-        >
-          <Icon name="download" />
-          Download Resume
-        </a>
+       
       </div>
     </header>
   );
