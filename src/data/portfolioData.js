@@ -39,8 +39,8 @@ export const skills = [
   },
   {
     title: 'Tools for shipping',
-    note: 'I use Git, deployment platforms, and responsive QA to take a project from local work to a usable release.',
-    items: ['Git & GitHub', 'Netlify', 'Vercel', 'WordPress', 'Responsive QA'],
+    note: 'I use Git, cloud services, payment tools, deployment platforms, and responsive QA to take a project from local work to a usable release.',
+    items: ['Git & GitHub', 'Netlify', 'Vercel', 'Stripe', 'Supabase', 'Render', 'WordPress', 'Responsive QA'],
   },
 ];
 
