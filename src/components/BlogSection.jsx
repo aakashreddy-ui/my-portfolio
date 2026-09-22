@@ -1,165 +1,85 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { blogPosts } from '../data/portfolioData';
 
-function slugify(value) {
-  return value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
 export default function BlogSection() {
-  const [activeCategory, setActiveCategory] = useState('All');
   const [selectedPost, setSelectedPost] = useState(null);
-  const [activeView, setActiveView] = useState('read');
-  const categories = ['All', ...new Set(blogPosts.map((post) => post.category))];
-  const visiblePosts =
-    activeCategory === 'All' ? blogPosts : blogPosts.filter((post) => post.category === activeCategory);
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
-    const syncFromHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      const slug = hash.replace(/^blog\//, '');
+    if (!selectedPost) return undefined;
 
-      if (!slug) {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    const handleDialogKeyDown = (event) => {
+      if (event.key === 'Escape') {
         setSelectedPost(null);
-        setActiveView('read');
         return;
       }
 
-      const post = blogPosts.find((entry) => slugify(entry.title) === slug);
-      if (post) {
-        setSelectedPost(post);
-        setActiveView('read');
+      if (event.key !== 'Tab') return;
+      const focusableElements = dialogRef.current?.querySelectorAll('button');
+      if (!focusableElements?.length) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
       }
     };
 
-    syncFromHash();
-    window.addEventListener('popstate', syncFromHash);
-
-    return () => window.removeEventListener('popstate', syncFromHash);
-  }, []);
-
-  useEffect(() => {
-    if (!selectedPost) {
-      if (window.location.hash.startsWith('#blog/')) {
-        window.history.replaceState(null, '', '#blog');
-      }
-      return;
-    }
-
-    const nextHash = `#blog/${slugify(selectedPost.title)}`;
-    if (window.location.hash !== nextHash) {
-      window.history.pushState(null, '', nextHash);
-    }
+    document.addEventListener('keydown', handleDialogKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleDialogKeyDown);
+      triggerRef.current?.focus();
+    };
   }, [selectedPost]);
 
-  const handleCategoryChange = (category) => {
-    setActiveCategory(category);
-    setSelectedPost(null);
-    setActiveView('read');
-    if (window.location.hash.startsWith('#blog/')) {
-      window.history.pushState(null, '', '#blog');
-    }
-  };
-
-  const openPost = (post) => {
-    setSelectedPost(post);
-    setActiveView('read');
-  };
-
-  const closePost = () => {
-    setSelectedPost(null);
-    setActiveView('read');
-    window.history.pushState(null, '', '#blog');
-  };
-
   return (
-    <section className="section-shell" id="blog">
-      <div className="section-heading">
-        <p className="section-label">Blog</p>
-        <h2>Notes on building things: tutorials, project breakdowns, and lessons from shipping code.</h2>
-      </div>
-      {selectedPost ? (
-        <div className="blog-detail-page">
-          <button type="button" className="blog-back-button" onClick={closePost}>
-            ← Back to blog
-          </button>
-          <div className="blog-detail-panel" id={`post-${slugify(selectedPost.title)}`}>
-            <div className="blog-detail-nav">
-              <div>
-                <p className="blog-detail-label">Reading now</p>
-                <h3>{selectedPost.title}</h3>
-              </div>
-              <div className="blog-detail-actions">
-                <button
-                  type="button"
-                  className={`detail-tab ${activeView === 'read' ? 'active' : ''}`}
-                  onClick={() => setActiveView('read')}
-                >
-                  Read
-                </button>
-                <button
-                  type="button"
-                  className={`detail-tab ${activeView === 'gallery' ? 'active' : ''}`}
-                  onClick={() => setActiveView('gallery')}
-                >
-                  Gallery
-                </button>
-              </div>
-            </div>
-
-            {activeView === 'read' ? (
-              <div className="blog-detail-content">
-                <p className="blog-detail-intro">{selectedPost.intro}</p>
-                {selectedPost.content.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            ) : (
-              <div className="blog-gallery">
-                {selectedPost.gallery.map((image) => (
-                  <img key={image} src={image} alt={selectedPost.title} />
-                ))}
-              </div>
-            )}
-          </div>
+    <section className="section-shell writing-section" id="writing">
+      <div className="section-heading writing-heading">
+        <div>
+          <p className="section-label">Writing</p>
+          <h2>Notes from building for the web.</h2>
         </div>
-      ) : (
-        <>
-          <div className="blog-filter-row">
-            {categories.map((category) => (
-              <button
-                key={category}
-                type="button"
-                className={`filter-chip ${activeCategory === category ? 'active' : ''}`}
-                onClick={() => handleCategoryChange(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="blog-grid">
-            {visiblePosts.map((post) => (
-              <article className="blog-card" key={post.title}>
-                <div className="blog-card-top">
-                  <span className="blog-category">{post.category}</span>
-                  <span className="blog-meta">{post.date}</span>
-                </div>
-                <button type="button" className="blog-title-button" onClick={() => openPost(post)}>
-                  {post.title}
-                </button>
-                <p>{post.excerpt}</p>
-                <div className="blog-tags">
-                  {post.tags.map((tag) => (
-                    <small key={tag}>{tag}</small>
-                  ))}
-                </div>
-                <span className="blog-readtime">{post.readTime}</span>
-              </article>
-            ))}
-          </div>
-        </>
+        <p>A few practical notes on frontend work, backend basics, and the decisions behind my projects.</p>
+      </div>
+      <div className="writing-grid">
+        {blogPosts.map((post) => (
+          <button className="writing-card" key={post.title} type="button" onClick={(event) => { triggerRef.current = event.currentTarget; setSelectedPost(post); }}>
+            <span>{post.category}</span>
+            <h3>{post.title}</h3>
+            <p>{post.excerpt}</p>
+            <div className="writing-tags">
+              {post.tags.map((tag) => <small key={tag}>{tag}</small>)}
+            </div>
+            <strong className="writing-read-more">Read note <span aria-hidden="true">-&gt;</span></strong>
+          </button>
+        ))}
+      </div>
+      {selectedPost && (
+        <div className="writing-dialog-backdrop" role="presentation" onClick={() => setSelectedPost(null)}>
+          <article ref={dialogRef} className="writing-dialog" role="dialog" aria-modal="true" aria-labelledby="writing-dialog-title" aria-describedby="writing-dialog-excerpt" onClick={(event) => event.stopPropagation()}>
+            <button ref={closeButtonRef} className="writing-dialog-close" type="button" onClick={() => setSelectedPost(null)} aria-label="Close blog post">x</button>
+            <span>{selectedPost.category}</span>
+            <h3 id="writing-dialog-title">{selectedPost.title}</h3>
+            <p id="writing-dialog-excerpt" className="writing-dialog-excerpt">{selectedPost.excerpt}</p>
+            <div className="writing-dialog-content">
+              {selectedPost.content.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <div className="writing-tags">
+              {selectedPost.tags.map((tag) => <small key={tag}>{tag}</small>)}
+            </div>
+          </article>
+        </div>
       )}
     </section>
   );

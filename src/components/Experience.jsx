@@ -6,7 +6,7 @@ export default function Experience() {
     <section className="section-shell split-section" id="experience">
       <div>
         <p className="section-label">Experience</p>
-        <h2>Education, internship work, and what I am doing now.</h2>
+        <h2>What I have been working on.</h2>
       </div>
       <div className="timeline">
         {timeline.map((item) => (

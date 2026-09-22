@@ -3,10 +3,10 @@ import { skills } from '../data/portfolioData';
 
 export default function Skills() {
   return (
-    <section className="section-shell" id="skills">
+    <section className="section-shell skills-section" id="skills">
       <div className="section-heading">
         <p className="section-label">Skills</p>
-        <h2>Stack I use to build and ship.</h2>
+        <h2>Tools I use to build websites.</h2>
       </div>
       <div className="skills-grid">
         {skills.map((group) => (

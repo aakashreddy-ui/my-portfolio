@@ -1,230 +1,157 @@
-import profileImage from '../../images/profile.jpg';
-import todoImage from '../../images/todohome.png';
+import shopSphereImage from '../../images/shopsphere-preview.png';
+import travelTripImage from '../../images/traveltrip-preview.png';
+import jayabheriImage from '../../images/jayabheri-preview.png';
+import digitalHeroesImage from '../../images/digitalheroes-home.png';
+import todoWebsiteImage from '../../images/todo-website.png';
 import portfolioImage from '../../images/home.png';
-import freelanceImage from '../../images/freelancehome.png';
 
-export const whatsappUrl = 'https://wa.me/916301612731?text=Hi%20Aakash%20Reddy!%20Saw%20your%20portfolio.%20Need%20web%20dev.';
-
-
-
-
+export const email = 'aakashreddy025@gmail.com';
+export const emailUrl = `mailto:${email}`;
+export const whatsappUrl =
+  'https://wa.me/916301612731?text=Hi%20Aakash%20Reddy!%20I%20saw%20your%20portfolio.';
 export const githubUrl = 'https://github.com/aakashreddy-ui';
-
 export const linkedinUrl = 'https://www.linkedin.com/in/aakash-reddy-b048a1223/';
 
-export const navItems = ['About', 'Skills', 'Projects', 'Blog', 'Experience', 'Contact'];
+export const navItems = ['Work', 'Writing', 'About', 'Skills', 'Experience', 'Contact'];
 
-export const profile = profileImage;
-
-
-export const availability = 'Open to full-time & remote full-stack roles';
-export const heroHeadline = 'Full-stack developer for practical web apps.';
+export const availability = 'Open to full-stack developer roles';
+export const heroHeadline = 'I build clear, responsive web experiences.';
 export const heroSubtext =
-  "I build responsive and user-friendly web applications using modern frontend and backend technologies, with hands-on experience in React.js, Node.js, MySQL, PHP, and MongoDB.";
-export const currentFocus = 'Building and shipping full-stack projects, writing technical case studies';
+  'I am Aakash, a full-stack developer from Hyderabad. I work mainly with React and Node.js, turning ideas and requirements into web experiences people can actually use.';
+export const currentFocus = 'React interfaces, Node.js APIs, and useful product work';
+
+export const proofPoints = [
+  ['06', 'live builds'],
+  ['React', 'frontend foundation'],
+  ['Open', 'to full-time roles'],
+];
 
 export const skills = [
   {
-    title: 'Frontend',
-    note: 'Interfaces that hold up on phones, laptops, and real users.',
-    items: ['HTML5', 'CSS3', 'JavaScript ES6+', 'TypeScript', 'React', 'Angular 18', 'Bootstrap 5', 'Responsive UI'],
+    title: 'Frontend development',
+    note: 'I build responsive React interfaces with clear layouts, useful states, and simple user flows.',
+    items: ['React', 'TypeScript', 'JavaScript', 'HTML/CSS'],
   },
   {
-    title: 'Backend',
-    note: 'APIs and data flows with a practical full-stack mindset.',
-    items: ['Node.js', 'Express.js', 'MongoDB', 'PHP', 'MySQL', 'REST APIs', 'JSON'],
+    title: 'Backend foundations',
+    note: 'I use Node.js, Express, and databases to connect the interface to practical APIs and stored data.',
+    items: ['Node.js', 'Express', 'MongoDB', 'MySQL', 'PHP', 'REST APIs'],
   },
   {
-    title: 'Workflow',
-    note: 'The everyday tools used to ship and keep improving.',
-    items: ['Git', 'GitHub', 'VS Code', 'WordPress', 'Netlify', 'Vercel'],
+    title: 'Tools for shipping',
+    note: 'I use Git, deployment platforms, and responsive QA to take a project from local work to a usable release.',
+    items: ['Git & GitHub', 'Netlify', 'Vercel', 'WordPress', 'Responsive QA'],
   },
 ];
 
 export const projects = [
   {
-    title: 'Online Job Portal',
-    type: 'Capstone project',
+    title: 'ShopSphere',
+    eyebrow: 'E-commerce experience',
     description:
-      'A job board with candidate and admin workflows, job listings, search, applications, and a PHP/MySQL backend.',
-    image:
-      'https://plus.unsplash.com/premium_photo-1771376761549-817c1e38a8fa?q=80&w=2091&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    stack: ['HTML', 'CSS', 'JavaScript', 'React', 'Bootstrap', 'PHP', 'MySQL', 'XAMPP'],
-    link: 'https://e-job-portal.netlify.app/',
-    // GitHub URL 
-    codeLink: '',
+      'A storefront with category browsing, saved items, and cart interactions built around a straightforward shopping flow.',
+    image: shopSphereImage,
+    stack: ['React', 'Product UI', 'Cart flow'],
+    contribution: 'Designed and built the storefront experience from browsing to cart.',
+    link: 'https://shopsphere-by-aakash.netlify.app/',
+    featured: true,
   },
   {
-    title: 'Advanced Todo List',
-    type: 'Angular app',
+    title: 'Jayabheri — The Pinnacle',
+    eyebrow: 'Luxury real-estate website',
     description:
-      'A responsive productivity app focused on task state, clean layouts, and everyday usability across devices.',
-    image: todoImage,
-    stack: ['Angular', 'TypeScript', 'Node.js', 'JSON', 'Responsive UI'],
-    link: '',
-    codeLink: '',
+      'A high-intent residential landing page that presents residences, amenities, location, and enquiry paths with a premium editorial feel.',
+    image: jayabheriImage,
+    stack: ['Responsive UI', 'Landing page', 'Conversion design'],
+    contribution: 'Built the responsive presentation and enquiry journey for a premium property.',
+    link: 'https://jayabheri-the-pinnacle.netlify.app/',
   },
   {
-    title: 'Portfolio 2026',
-    type: 'Personal brand',
+    title: 'Digital Heroes',
+    eyebrow: 'Social impact landing page',
     description:
-      'The earlier version of this portfolio, redesigned here into a component-based React project with calmer interactions.',
+      'A mission-focused landing experience designed to communicate a charity-driven initiative and encourage participation.',
+    image: digitalHeroesImage,
+    stack: ['React', 'Landing page', 'Campaign UI'],
+    contribution: 'Designed and built the conversion-focused homepage for a purpose-driven project.',
+    link: 'https://digital-heroes1.netlify.app/',
+  },
+  {
+    title: 'Travel Trip',
+    eyebrow: 'Booking workflow',
+    description:
+      'A guided trip-planning flow that moves travellers through personal details, dates, guests, assistance, and confirmation.',
+    image: travelTripImage,
+    stack: ['React', 'Multi-step flow', 'Responsive UI'],
+    contribution: 'Built the multi-step booking flow from traveller details to confirmation.',
+    link: 'https://traveltrip-app.netlify.app/',
+    codeLink: 'https://github.com/aakashreddy-ui/Travel-Trip-Project',
+  },
+];
+
+export const explorations = [
+  {
+    title: 'Todo List App',
+    eyebrow: 'Productivity app',
+    description: 'A responsive task-management interface built around everyday task states and a clean, usable layout.',
+    image: todoWebsiteImage,
+    stack: ['React', 'TypeScript', 'Responsive UI'],
+    contribution: 'Built task states and a responsive everyday workflow.',
+    link: 'https://aakash-todolist-app.netlify.app/',
+    status: 'Earlier build',
+  },
+  {
+    title: 'Previous Portfolio Iteration',
+    eyebrow: 'Archived personal website',
+    description: 'An earlier React portfolio iteration showing the progression from a personal site to a component-based product.',
     image: portfolioImage,
     stack: ['React', 'Vite', 'CSS'],
+    contribution: 'Designed and built an earlier component-based portfolio iteration.',
     link: 'https://aakashreddy.in/',
-    codeLink: '',
+    codeLink: 'https://github.com/aakashreddy-ui/my-portfolio',
+  },
+];
+
+export const blogPosts = [
+  {
+    category: 'Frontend',
+    title: 'Designing React components that stay easy to use',
+    excerpt: 'A practical look at component responsibilities, data flow, and the choices that keep React interfaces understandable.',
+    content: ['A React component is easier to maintain when it owns one clear responsibility and receives only the data it needs.', 'I start by mapping the user flow, then keep state close to the interaction that owns it. Shared state is introduced only when multiple parts of the experience genuinely depend on it.', 'This keeps the interface easier to test, adjust, and extend as the product grows.'],
+    tags: ['React', 'Component design', 'UI architecture'],
   },
   {
-    title: 'Freelancing Platform',
-    type: 'Marketplace concept',
-    description:
-      'A marketplace-style website with project discovery, bidding concepts, client flows, and service presentation.',
-    image: freelanceImage,
-    stack: ['HTML', 'CSS', 'JavaScript', 'UI Design'],
-    link: '',
-    codeLink: '',
+    category: 'Backend',
+    title: 'Building a REST API with Node.js and Express from scratch',
+    excerpt: 'A concise look at route maps, middleware, validation, and the choices that keep a small API understandable.',
+    content: ['A small API is easiest to maintain when its route map is predictable: resources get clear names, controllers stay focused, and middleware handles cross-cutting concerns.', 'I validate request data at the boundary before it reaches business logic. This keeps error responses consistent and makes the happy path much easier to read.', 'Starting with a simple folder structure and a few tested endpoints leaves room to grow without hiding the application behind unnecessary abstractions.'],
+    tags: ['Node.js', 'Express', 'MongoDB'],
+  },
+  {
+    category: 'Backend',
+    title: 'Debugging a broken MongoDB query: a walkthrough',
+    excerpt: 'A debugging story about checking stored data, schema assumptions, and query types before guessing.',
+    content: ['When a query returns no results, I first inspect an actual stored document. Assumptions about field names, nesting, and value types are often the real problem.', 'Next I reduce the query to one condition and test it directly. Adding filters back one at a time shows exactly which assumption breaks the match.', 'This process is slower than guessing for the first minute, but much faster than changing several layers of code without evidence.'],
+    tags: ['MongoDB', 'Debugging', 'Backend'],
   },
 ];
 
 export const timeline = [
   {
-    title: 'Full-Stack Developer',
-    period: '2026 - Present',
-    body: 'Building full-stack projects end to end, strengthening React and Node fundamentals, and shipping work that mirrors production engineering roles.',
+    title: 'Independent full-stack projects',
+    period: '2026 — present',
+    body: 'I am currently building complete web projects, from the first screen to the data and API work behind it. My main tools are React, Node.js, REST APIs, and responsive CSS.',
   },
   {
-    title: 'Junior Web Developer Internship',
+    title: 'Junior Web Developer Intern',
     period: '2025',
-    body: 'Built websites with HTML, CSS, JavaScript, PHP, WordPress, and Wix while collaborating with design teams.',
+    body: 'During my 2025 internship, I worked across six web technologies: HTML, CSS, JavaScript, PHP, WordPress, and Wix. I also worked with designers and adjusted pages based on client requirements.',
   },
   {
-    title: 'B.Tech in Computer Science & Engineering',
-    period: '2021 - 2025',
+    title: 'B.Tech, Computer Science & Engineering',
+    period: '2021 — 2025',
     body: 'CSI-Wesley Institute of Technology & Sciences, affiliated to JNTUH.',
   },
 ];
 
-export const services = ['Portfolio websites', 'Landing pages', 'Responsive fixes', 'WordPress updates'];
-
-export const blogPosts = [
-  {
-    title: 'Converting an Angular app to React: what actually changes',
-    category: 'Frontend',
-    date: 'Aug 3, 2026',
-    readTime: '6 min read',
-    excerpt:
-      'Notes from rebuilding a component-based Angular UI in React — state management, routing, and the habits that carried over.',
-    intro:
-      'Moving between frameworks exposes what you actually understood versus what you memorized. Here is what changed, and what stayed the same, when I rebuilt an Angular UI in React.',
-    content: [
-      "Angular's two-way binding and services map fairly closely to React's props/state and hooks once you stop looking for a 1:1 translation and start thinking in terms of data flow.",
-      'The biggest shift was routing and dependency injection — React leaves more of that up to you, which forces clearer decisions about where state should live.',
-      'What carried over cleanly: component thinking, separating presentation from logic, and treating each UI piece as a small, testable unit.',
-    ],
-    tags: ['Angular', 'React', 'Migration'],
-    gallery: [
-      //'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80',
-      //'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-  {
-    title: 'Building a REST API with Node.js and Express from scratch',
-    category: 'Backend',
-    date: 'Jul 24, 2026',
-    readTime: '7 min read',
-    excerpt:
-      'A walkthrough of setting up routes, middleware, and MongoDB models for a small full-stack project.',
-    intro:
-      'Every full-stack project starts the same way for me: define the resources, sketch the routes, then build outward. Here is the structure I default to.',
-    content: [
-      'I start with a clear route map (GET/POST/PUT/DELETE per resource) before writing any controller logic — it keeps the API predictable as it grows.',
-      'Middleware handles the repetitive concerns: request validation, error handling, and auth checks, so route handlers stay focused on business logic.',
-      'Mongoose schemas double as documentation — a well-typed model makes the rest of the API easier to reason about.',
-    ],
-    tags: ['Node.js', 'Express', 'MongoDB'],
-    gallery: [
-     // 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80',
-      // 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-  {
-    title: '5 lessons from my first web development internship',
-    category: 'Career',
-    date: 'Jul 18, 2026',
-    readTime: '5 min read',
-    excerpt:
-      'What building real client sites taught me that university projects never did — deadlines, feedback loops, and shipping imperfect work.',
-    intro:
-      'Academic projects and client work are different disciplines. My internship building sites with PHP, WordPress, and Wix taught me lessons no coursework covered.',
-    content: [
-      'Client feedback is rarely about code quality — it is about whether the thing in front of them solves their problem. Learning to translate vague feedback into technical changes was the real skill.',
-      'Shipping something imperfect on time beats a polished feature that misses the deadline. I learned to scope ruthlessly.',
-      'Version control discipline matters more on a team than solo — clear commits and branches saved real time during review.',
-    ],
-    tags: ['Internship', 'Career', 'Lessons Learned'],
-    gallery: [
-    // 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
-     // 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-  {
-    title: 'Git workflow habits that saved me from merge conflicts',
-    category: 'Tools',
-    date: 'Jul 10, 2026',
-    readTime: '4 min read',
-    excerpt:
-      'Small, boring Git habits — short-lived branches, frequent pulls, and atomic commits — that make collaboration painless.',
-    intro:
-      'Most merge conflicts I have hit came from avoidable habits, not Git being difficult. A few small changes made collaboration far smoother.',
-    content: [
-      'Keeping branches short-lived and scoped to one feature meant less drift between my branch and main by the time I opened a PR.',
-      'Pulling and rebasing frequently, instead of once at the end, turned big scary conflicts into small manageable ones.',
-      'Atomic commits with clear messages made it much faster to find and revert the exact change that broke something.',
-    ],
-    tags: ['Git', 'GitHub', 'Collaboration'],
-    gallery: [
-    //  'https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=900&q=80',
-    //  'https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-  {
-    title: 'How I structure a full-stack project before writing code',
-    category: 'Process',
-    date: 'Jun 28, 2026',
-    readTime: '5 min read',
-    excerpt:
-      'Data models first, then API contracts, then UI. A simple planning order that saves rework later.',
-    intro:
-      'The projects that went smoothest were the ones where I resisted opening the editor immediately and planned the shape of the data first.',
-    content: [
-      'I sketch the data model before anything else — what entities exist, how they relate, and what a typical query looks like.',
-      'Next comes the API contract: request/response shapes for each endpoint, written down before the frontend depends on them.',
-      'Only after that do I start on UI, because by then the frontend has something stable to build against instead of guessing.',
-    ],
-    tags: ['Planning', 'Full-Stack', 'Process'],
-    gallery: [
-    //  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
-    //  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-  {
-    title: 'Debugging a broken MongoDB query: a walkthrough',
-    category: 'Backend',
-    date: 'Jun 14, 2026',
-    readTime: '4 min read',
-    excerpt:
-      'A real debugging session — tracing a query that returned the wrong documents back to a schema mismatch.',
-    intro:
-      'Some bugs are quick to spot; this one took a slow walk through the schema, the query, and the data itself to track down.',
-    content: [
-      'The symptom was simple: a filter that should have returned five documents returned zero. The cause was a type mismatch — a field stored as a string being queried as a number.',
-      'Logging the raw query and comparing it against a manual database lookup made the mismatch obvious once I looked in the right place.',
-      'The fix was small, but the habit it reinforced was bigger: check the actual stored data before assuming the query logic is wrong.',
-    ],
-    tags: ['MongoDB', 'Debugging', 'Backend'],
-    gallery: [
-      // 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&w=900&q=80',
-      // 'https://images.unsplash.com/photo-152637995098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
-    ],
-  },
-];
+export const services = ['React interfaces', 'Full-stack project builds', 'Responsive frontend work', 'WordPress updates'];
