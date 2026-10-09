@@ -1,4 +1,5 @@
 import shopSphereImage from '../../images/shopsphere-preview.png';
+import streamingPortfolioImage from '../../images/streaming-portfolio-preview.png';
 import travelTripImage from '../../images/traveltrip-preview.png';
 import jayabheriImage from '../../images/jayabheri-preview.png';
 import digitalHeroesImage from '../../images/digitalheroes-home.png';
@@ -21,7 +22,7 @@ export const heroSubtext =
 export const currentFocus = 'React interfaces, Node.js APIs, and useful product work';
 
 export const proofPoints = [
-  ['06', 'live builds'],
+  ['07', 'live builds'],
   ['React', 'frontend foundation'],
   ['Open', 'to full-time roles'],
 ];
@@ -46,15 +47,14 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'ShopSphere',
-    eyebrow: 'E-commerce experience',
+    title: 'Aakash Streaming Portfolio',
+    eyebrow: 'Netflix-inspired developer showcase',
     description:
-      'A storefront with category browsing, saved items, and cart interactions built around a straightforward shopping flow.',
-    image: shopSphereImage,
-    stack: ['React', 'Product UI', 'Cart flow'],
-    contribution: 'Designed and built the storefront experience from browsing to cart.',
-    link: 'https://shopsphere-by-aakash.netlify.app/',
-    featured: true,
+      'A cinematic portfolio landing page with a red-and-black streaming aesthetic, bold hero typography, and a polished developer identity.',
+    image: streamingPortfolioImage,
+    stack: ['React', 'Landing page', 'UI design'],
+    contribution: 'Designed and built the cinematic personal brand and landing experience inspired by the provided reference.',
+    link: 'https://aakashprototype-streaming.netlify.app/',
   },
   {
     title: 'Jayabheri — The Pinnacle',
@@ -85,7 +85,18 @@ export const projects = [
     stack: ['React', 'Multi-step flow', 'Responsive UI'],
     contribution: 'Built the multi-step booking flow from traveller details to confirmation.',
     link: 'https://traveltrip-app.netlify.app/',
-    codeLink: 'https://github.com/aakashreddy-ui/Travel-Trip-Project',
+    // codeLink: 'https://github.com/aakashreddy-ui/Travel-Trip-Project',
+  },
+  {
+    title: 'ShopSphere',
+    eyebrow: 'E-commerce experience',
+    description:
+      'A storefront with category browsing, saved items, and cart interactions built around a straightforward shopping flow.',
+    image: shopSphereImage,
+    stack: ['React', 'Product UI', 'Cart flow'],
+    contribution: 'Designed and built the storefront experience from browsing to cart.',
+    link: 'https://shopsphere-by-aakash.netlify.app/',
+    featured: true,
   },
 ];
 
@@ -108,7 +119,7 @@ export const explorations = [
     stack: ['React', 'Vite', 'CSS'],
     contribution: 'Designed and built an earlier component-based portfolio iteration.',
     link: 'https://aakashreddy.in/',
-    codeLink: 'https://github.com/aakashreddy-ui/my-portfolio',
+    // codeLink: 'https://github.com/aakashreddy-ui/my-portfolio',
   },
 ];
 
